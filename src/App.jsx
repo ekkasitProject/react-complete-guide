@@ -29,7 +29,7 @@ const App = () => {
   // รับข้อมูลมาจาก Component NewExpense มาเก็บไว้ใน expense
   const addExpenseHandler = (expense) => {
     console.log("In App.jsx");
-    console.log(expense1);
+    console.log(expense);
   };
   return (
     <div>
