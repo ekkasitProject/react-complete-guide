@@ -9,7 +9,6 @@ const ExpenseForm = (props) => {
   //   enteredAmount: "",
   //   enteredDate: "",
   // });
-
   const titleChangeHandler = (event) => {
     setEnterdTitle(event.target.value);
     // setUserInput({
@@ -50,7 +49,7 @@ const ExpenseForm = (props) => {
       date: new Date(enteredDate),
     };
     // ส่งข้อมูลไปยัง Component NewExpense
-    props.saveExpenseData(expenseData);
+    props.onSaveExpenseData(expenseData);
     // Clear value
     setEnterdTitle("");
     setEnterdAmount("");
@@ -82,8 +81,12 @@ const ExpenseForm = (props) => {
           <input type="date" value={enteredDate} onChange={dateChangeHandler} />
         </div>
       </div>
+
       <div className=".new-expense__actions">
-        <button type="submit">Add</button>
+        <button type="button" onClick={props.onCancel}>
+          Cancel
+        </button>
+        <button type="submit">Add Expense</button>
       </div>
     </form>
   );
